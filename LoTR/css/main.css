@@ -25,6 +25,7 @@ body {
     background-color: #010101;
     font-family: raleway_f, sans-serif;
     line-height: 1.55;
+    overflow-x: hidden;
 }
 
 .main-header {
@@ -117,10 +118,10 @@ body {
     align-items: center;
     position: relative;
     text-align: center;
-    /* Update: */
     top: -1px;
     z-index: 10;
 }
+
 .main-article__header {
     text-transform: uppercase;
     font-size: calc(var(--index) * 1.8);
@@ -129,6 +130,7 @@ body {
     transition: var(--transition);
     will-change: transform;
 }
+
 .main-article__paragraph {
     max-width: calc(var(--index) * 30);
     font-size: calc(var(--index) * .9);
@@ -137,13 +139,93 @@ body {
     transition: var(--transition);
     will-change: transform;
 }
+
 .content {
     will-change: transform;
 }
+
 .copy {
     position: absolute;
     bottom: calc(var(--index) * 2.5);
     opacity: .45;
     font-size: calc(var(--index) * .75);
     letter-spacing: calc(var(--index) / 37.5);
+}
+
+.video-content {
+    position: relative;
+    color: #f1f1f1;
+    margin-top: calc(var(--index) * -23);
+    align-items: center;
+    text-align: justify;
+    justify-content: space-around;
+}
+
+.video-col {
+    text-align: center;
+
+}
+
+.video-col p {
+    padding: 0 10px;
+    text-align: justify;
+}
+
+.video-title {
+    text-align: center;
+}
+
+.video-img {
+    text-align: center;
+    width: calc(var(--index) * 22);
+    height: calc(var(--index) * 15);
+}
+
+.portfolio {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.descr {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    padding-top: 80px;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0) rotate(90deg);
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    top: 100%;
+    font-size: 20px;
+    font-family: raleway_f, sans-serif;
+}
+
+.video-col:hover .descr {
+    opacity: 1;
+    top: 0;
+    transform: scale(1) rotate(0);
+}
+
+.portfolio span:hover {
+    border: #9d822b 2px solid;
+}
+
+.api {
+    background-image: url(../../_src/map.jpg);
+    min-height: 100vh;
+    background-position: center;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    top: -7px;
+    z-index: 10;
 }
