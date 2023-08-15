@@ -24,20 +24,10 @@
 }
 
 @font-face {
-    font-family: assassin-st;
-    src: url(../fonts/assassin.woff2);
-    font-weight: 900;
-}
-
-@font-face {
     font-family: anirb;
     src: url(../fonts/anirb___.ttf);
 }
 
-@font-face {
-    font-family: ring;
-    src: url(../fonts/RingbearerMedium-51mgZ.ttf);
-}
 
 body {
     background-color: #010101;
