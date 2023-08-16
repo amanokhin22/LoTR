@@ -7,7 +7,6 @@
         max-width: 1200px;
         margin: 0 auto;
     }
-
 }
 
 /* lg <= Extra large (xl) */
@@ -22,23 +21,33 @@
 
 /* sm <= Medium (md) */
 @media (max-width: 768px) {
+    .showcase {
+        height: calc(var(--index) * 40);
+    }
+
     .showcase-header {
         font-size: 24px;
     }
 
     .showcase-carousel__item p {
         font-size: 24px;
+        padding: 20px;
     }
 }
 
 /* xs <= Small (sm) */
 @media (max-width: 576px) {
+    .showcase {
+        height: calc(var(--index) * 45);
+    }
+
     .showcase-header {
         font-size: 20px;
     }
 
     .showcase-carousel__item p {
         font-size: 20px;
+        padding: 20px;
     }
 }
 

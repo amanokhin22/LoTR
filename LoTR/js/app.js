@@ -1,5 +1,5 @@
 window.addEventListener('scroll', e => {
-    document.body.style.cssText += `--scrollTop: ${this.scrollY}px`
+    document.body.style.cssText += `--scrollTop: ${scrollY}px`
 });
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -9,12 +9,27 @@ ScrollSmoother.create({
 });
 
 window.addEventListener('DOMContentLoaded', () => {
-    fetch('https://jsonplaceholder.typicode.com/todos')
+    fetch('https://jsonplaceholder.typicode.com/comments')
         .then(response => response.json())
         .then(data => {
             const apiDataElement = document.getElementById('api-data');
+            let commentsHTML = '<h2 style="text-align: center">Comments</h2>';
 
-            apiDataElement.innerHTML = `<h2>API Data</h2><p>${JSON.stringify(data.title)}</p>`;
+            const limitedData = data.slice(0, 50);
+
+            limitedData.forEach(comment => {
+                commentsHTML += `
+                    <div class="col-lg-3 col-md-4">
+                        <strong>Name:</strong> ${comment.name}<br>
+                        <strong>Email:</strong> ${comment.email}<br>
+                        <strong>Body:</strong> ${comment.body}
+                    </div>
+                `;
+            });
+
+            apiDataElement.innerHTML = commentsHTML;
+            console.log(data);
+            ScrollTrigger.refresh();
         })
         .catch(error => {
             console.error('Error fetching data:', error);
